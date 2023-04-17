@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    List Post
+{% endblock %}
+
+{% block body %}
+    {% for po in post %}
+        <div class="card shadow-sm my-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ po.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted small py-2">{{ po.deta_created }}</h6>
+                <p class="card-text py-3">
+                    {{ po.text }}
+                </p>
+                <a href="{% url 'post_list' %}{{ po.pk }}" class="btn btn-sm btn-success">Read More</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
